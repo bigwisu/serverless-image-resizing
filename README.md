@@ -41,9 +41,9 @@ image will be served from S3 directly.
     to different sizes, e.g. with an image uploaded in the bucket called
     image.png:
 
-    - http://[BucketWebsiteHost]/300x300/path/to/image.png
-    - http://[BucketWebsiteHost]/90x90/path/to/image.png
-    - http://[BucketWebsiteHost]/40x40/path/to/image.png
+    - http://[BucketWebsiteHost]/path/to/image-resized-300x200.png
+    - http://[BucketWebsiteHost]/second/path/to/image-name-resized-400x600.jpg
+    - http://[BucketWebsiteHost]/path/to/image-resized-50x50.jpg
 
     You can find the `BucketWebsiteUrl` in the table of outputs displayed on a
     successful invocation of the deploy script.
