@@ -48,14 +48,6 @@ image will be served from S3 directly.
     You can find the `BucketWebsiteUrl` in the table of outputs displayed on a
     successful invocation of the deploy script.
 
-4. (Optional) Restrict resize dimensions
-
-    To restrict the dimensions the function will create, set the environment
-    variable `ALLOWED_DIMENSIONS` to a string in the format
-    *(HEIGHT)x(WIDTH),(HEIGHT)x(WIDTH),...*.
-
-    For example: *300x300,90x90,40x40*.
-
 ## License
 
 This reference architecture sample is [licensed][license] under Apache 2.0.
