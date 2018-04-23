@@ -23,7 +23,9 @@ function parseUrl(string) {
                 };
             }
 
-            format.originalKey = fileParts.dir + "/" + resizer[0] + fileParts.ext;
+            let dir = (fileParts.dir) ? fileParts.dir + "/" : "";
+
+            format.originalKey = dir + resizer[0] + fileParts.ext;
             format.mimeType = mimeType;
         }
     }

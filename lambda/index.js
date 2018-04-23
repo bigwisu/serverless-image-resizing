@@ -11,7 +11,7 @@ const Sharp = require('sharp');
 const BUCKET = process.env.BUCKET;
 const URL = process.env.URL;
 
-exports.handler = function(event, context, callback) {
+module.exports.handler = function(event, context, callback) {
 
   const key = event.queryStringParameters.key;
   const resizer = parseUrl(key);
@@ -19,10 +19,12 @@ exports.handler = function(event, context, callback) {
   const width = resizer.resize.width;
   const height = resizer.resize.height;
   const mimeType = resizer.mimeType;
+  const toFormat = (mimeType === "image/jpeg") ? "jpeg" : "png";
 
   S3.getObject({Bucket: BUCKET, Key: originalKey}).promise()
     .then(data => Sharp(data.Body)
       .resize(width, height)
+      .toFormat(toFormat)
       .toBuffer()
     )
     .then(buffer => S3.putObject({
